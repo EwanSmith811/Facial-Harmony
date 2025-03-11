@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Results</title>
+</head>
+<body>
+    <h1>Analysis Results</h1>
+    <img src="{{ img_path }}" width="300">
+    <h2>Scores (1-10):</h2>
+    <ul>
+        {% for feature, score in features.items() %}
+            <li>{{ feature }}: {{ score }}</li>
+        {% endfor %}
+    </ul>
+    <h2>Final Score: {{ final_score }}</h2>
+</body>
+</html>
