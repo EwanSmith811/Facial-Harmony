@@ -44,8 +44,10 @@ export default function FileUpload() {
 
     try {
       // First get facial analysis results
-      const response = await axios.post('http://localhost:5000/api/upload', formData);
-      setResults(response.data);
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/upload`, {
+        method: 'POST',
+        body: formData,
+      });
 
       // Then get AI summary
       const summaryResponse = await axios.post('http://localhost:5000/api/generate-summary', {
